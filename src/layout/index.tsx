@@ -15,7 +15,7 @@ interface ILayoutProps {
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction:column
+  flex-direction:column;
 `
 
 export default ({ children, location }: ILayoutProps) => {
@@ -23,7 +23,6 @@ export default ({ children, location }: ILayoutProps) => {
     <Wrapper>
       <GlobalStyles />
       <Head pathname={location.pathname} />
-    
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </Wrapper>
   )
