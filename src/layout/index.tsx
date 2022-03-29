@@ -23,6 +23,7 @@ export default ({ children, location }: ILayoutProps) => {
     <Wrapper>
       <GlobalStyles />
       <Head pathname={location.pathname} />
+
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </Wrapper>
   )
