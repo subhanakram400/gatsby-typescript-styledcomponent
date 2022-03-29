@@ -6,6 +6,8 @@ import Layout from '../layout/index'
 
 import Image from '../components/Image'
 import Heading from '../components/Heading'
+import {TextComponent} from "../components/Text";
+import img from "../images/homepage-section4.png";
 
 import { GatsbyImageFluidProps } from 'gatsby-image'
 
@@ -34,8 +36,11 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: ${p => p.theme.spacing.unit * 3}px;
-  background: #003580;
+
+ background: transparent url(${img}) 0% 0% no-repeat padding-box;
+
 `
+
 
 export default ({ data, location }: IndexPageProps) => {
   const { image, site } = data
@@ -43,11 +48,10 @@ export default ({ data, location }: IndexPageProps) => {
   return (
     <Layout location={location}>
       <Wrapper>
-        <Image img={image.childImageSharp} />
-        <Heading
-          title={site.siteMetadata.title}
-          subtitle={site.siteMetadata.description}
-        />
+     <div style={{width:"30%"}}> <TextComponent.Title>Nostalgické kouzl hrubého Jeseníku</TextComponent.Title></div>
+      
+       <div style={{width:"40%",textAlign:"center"}}> <TextComponent.Text >Hrubý Jeseník je druhým největším pohořím České republiky. Na rozdíl od Krkonoš a Šumavy není ale tak turisticky navštěvovaný, což má své velké výhody. Úchvatný ráz krajiny ještě nestihla pozměnit ruka člověka a zdejší neposkvrněná příroda má v sobě léčivou sílu. Nadechněte se a objevujte čistou krásu jesenických hor. Záleží jen na vás, zda pěšky, na kole či na lyžích.</TextComponent.Text></div>
+    
       </Wrapper>
     </Layout>
   )

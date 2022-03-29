@@ -23,3 +23,8 @@ h6 {
 p {
   margin-top: 0;
 }
+
+.check{
+  font-size: 40rem;
+  color: red;
+}
